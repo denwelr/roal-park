@@ -16,6 +16,9 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <link rel="stylesheet" href="css/main.css">
+
+    <script src="vendors/air-datepicker/datepicker.min.js"></script>
+    <link rel="stylesheet" href="vendors/air-datepicker/datepicker.min.css">
 </head>
 
 <body>
@@ -63,21 +66,26 @@
                             <h4 class="column__title">
                                 Check In
                             </h4>
-                            <input type="datetime-local" class="intro__data">
+                            <input type="text" class="datepicker-here intro__data" readonly>
                         </div>
                         <div class="intro__column">
                             <h4 class="column__title">
                                 Check Out
                             </h4>
-                            <input type="datetime-local" class="intro__data">
+                            <input type="text" class="datepicker-here intro__data" readonly>
                         </div>
                         <div class="intro__column">
                             <h4 class="column__title">
                                 Person
                             </h4>
                             <select name="" id="" class="intro__select">
-                                <option value="/">Select</option>
-                                <option value="1">2 adults 1 kid</option>
+                                <option value="/"></option>
+                                <option value="1">1 adult</option>
+                                <option value="1">2 adults</option>
+                                <option value="1">1 adult 1 kid</option>
+                                <option value="1">2 adults 2 kids</option>
+                                <option value="1">2 adults 3 kids</option>
+                                <option value="1">2 adults 4 kids</option>
                             </select>
                         </div>
 

@@ -160,10 +160,38 @@ ul {
         display: block;
 
         width: 100%;
+
+        outline: none;
+        border: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+        background: none;
+        padding: 5px;
+
+        font-family: inherit;
+    }
+
+    &__data-input {
+        
     }
 
     &__select {
-        width: 100%;
+        font-family: inherit;
+        background: none;
+        display: block;
+
+        outline: none;
+        appearance: none;
+
+        padding: 5px;
+        border: none;
+
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+        cursor: pointer;
+        option {
+            padding: 5px;
+        }
     }
 }
 
@@ -252,7 +280,6 @@ ul {
 
             .info__content {
                 flex: none;
-                
                 margin-left: 0;
                 margin-bottom: 20px;
             }
@@ -435,7 +462,7 @@ ul {
 
         padding: 19px 22px;
 
-        background-color: rgba(226, 226, 226, 0.4);
+        background-color: rgba(226, 226, 226, .6);
         border-radius: 10px;
     }
 
