@@ -9,7 +9,7 @@ $(document).ready(function(){
     $('.header__link').click(function() {
 
         if($(".header__burger").hasClass("active")) {
-            $(this).removeClass("active");
+            $(".header__burger").removeClass("active");
             $(".header__inner").removeClass("active");
         }
         $page.animate({
