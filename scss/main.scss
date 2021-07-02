@@ -3,6 +3,8 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 .wrapper {
@@ -18,7 +20,7 @@ body {
 body {
     margin: 0;
 
-    font-family: "Gelasio", serif;
+    font-family: $primaryFort;
     font-size: 18px;
 
     color: #081f32;
@@ -31,8 +33,13 @@ a {
 
 .primary-btn {
     display: inline-block;
+    text-align: center;
+
     background-color: $mainColor;
     font-size: 16px;
+
+    font-family: $secondaryFont;
+    font-weight: 500;
 
     padding: 15px 30px;
     line-height: 24px;
@@ -54,7 +61,7 @@ a {
     letter-spacing: 10%;
     text-transform: uppercase;
 
-    font-family: "Roboto", sans-serif;
+    font-family: $secondaryFont;
     font-weight: 500;
 
     color: $mainColor;
@@ -62,7 +69,7 @@ a {
 }
 
 .title {
-    font-family: "Gelasio", serif;
+    font-family: $primaryFort;
     font-weight: 500;
     font-size: 32px;
 
@@ -74,21 +81,44 @@ a {
     font-weight: normal;
     line-height: 29px;
 
-    color: rgba(8, 31, 50, 0.6);
+    color: $lightgray;
+    font-family: $secondaryFont;
 }
 
 ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
+}
+
+.logo {
+    display: block;
 }
 
 .intro {
     background: url("../img/bg.jpg") center / cover no-repeat;
     background-attachment: fixed;
     position: relative;
+    z-index: 1;
+
+    &:after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        background-color: $introMask;
+        
+    }
 
     padding-bottom: 100px;
+
+    &__btn {
+        
+    }
 
     &__content {
         max-width: 456px;
@@ -111,7 +141,7 @@ ul {
         font-size: 18px;
         line-height: 28px;
 
-        font-family: "Roboto", sans-serif;
+        font-family: $secondaryFont;
         font-weight: 400;
 
         color: rgba(8, 31, 50, 0.6);
@@ -120,6 +150,9 @@ ul {
     }
 
     &__form {
+        font-family: $secondaryFont;
+        font-size: 16px;
+
         position: absolute;
         padding: 24px 49px;
 
@@ -161,22 +194,26 @@ ul {
 
         outline: none;
         border: none;
+
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
         background: none;
         padding: 5px;
 
         font-family: inherit;
-    }
 
-    &__data-input {
-        
+        &:focus {
+            border-bottom-color: $mainColor;
+            border-bottom-width: 2px;
+        }
     }
 
     &__select {
         font-family: inherit;
         background: none;
+
         display: block;
+        width: 100%;
 
         outline: none;
         appearance: none;
@@ -187,9 +224,6 @@ ul {
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
         cursor: pointer;
-        option {
-            padding: 5px;
-        }
     }
 }
 
@@ -231,6 +265,7 @@ ul {
 
     &__nav {
         font-size: 16px;
+        margin: 0 10px 0;
 
         ul {
             display: flex;
@@ -315,6 +350,12 @@ ul {
         display: flex;
 
         &:after {
+            content: '►';
+
+            font-size: 40px;
+            margin: auto;
+
+            color: $mainColor;
         }
     }
 
@@ -347,9 +388,9 @@ ul {
     &__title {
         font-weight: 500;
         font-size: 24px;
-        line-height: 36px;
 
-        margin: 0;
+        line-height: 36px;
+        margin-bottom: 15px;
     }
 
     &__desc {
@@ -448,6 +489,8 @@ ul {
     }
 
     &__subtitle {
+        margin-top: 25px;
+        margin-bottom: 30px;
     }
 
     &__btn {
@@ -460,16 +503,15 @@ ul {
 
         padding: 19px 22px;
 
-        background-color: rgba(226, 226, 226, .6);
+        background-color: rgba(226, 226, 226, .8);
         border-radius: 10px;
     }
 
     &__text {
         display: flex;
-        justify-content: space-between;
         align-items: baseline;
 
-        width: 200px;
+        margin-bottom: 10px;
     }
 
     &__name {
@@ -478,8 +520,10 @@ ul {
     &__price {
         font-size: 12px;
 
-        font-family: "Roboto", sans-serif;
+        font-family: $secondaryFont;
         font-weight: normal;
+
+        margin-left: 27px;
 
         span {
             font-weight: 500;
@@ -488,6 +532,8 @@ ul {
     }
 
     &__link {
+        font-size: 14px;
+        padding: 10px 20px;
     }
 }
 
@@ -505,6 +551,11 @@ ul {
 
     &__title {
         margin: 5px 10px 5px 0;
+    }
+
+    &__text {
+        margin-top: 25px;
+        margin-bottom: 30px;
     }
 
     &__btn {
@@ -541,9 +592,6 @@ ul {
         display: inline-block;
     }
 
-    &__text {
-    }
-
     &__item-footer {
     }
 
@@ -559,6 +607,8 @@ ul {
     }
 
     &__link {
+        font-family: $secondaryFont;
+        font-size: 14px;
     }
 }
 
@@ -600,15 +650,18 @@ ul {
     &__input {
         flex: 1 1 auto;
 
-        /*&:focus {
-            border-bottom-width: 2px;
-            border-bottom-color: $mainColor;
-        }*/
+        &:focus {
+            border-width: 2px;
+            border-color: $mainColor;
+        }
     }
     &__submit {
         flex: 0 0 auto;
 
         margin-left: -10px;
+
+        font-family: $thirdFont;
+        padding: 15px 40px;
     }
 }
 
@@ -635,9 +688,10 @@ button {
     padding-top: 50px;
     padding-bottom: 145px;
 
+    font-family: $thirdFont;
+
     &__body {
         display: flex;
-        align-items: flex-start;
     }
 
     &__inner {
@@ -645,7 +699,7 @@ button {
     }
 
     &__info {
-        flex: 1 1 auto;
+        flex: 1 1 257px;
 
         margin-right: 75px;
         margin-bottom: 10px;
@@ -661,6 +715,10 @@ button {
 
         display: block;
         margin-bottom: 15px;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     &__media {
@@ -671,10 +729,12 @@ button {
 
         display: flex;
 
-        font-family: "Poppins", sans-serif;
+        font-family: $thirdFont;
 
         font-size: 16px;
         font-weight: 500;
+
+        margin-bottom: 15px;
     }
 
     &__nav-col {
@@ -691,7 +751,7 @@ button {
         margin-bottom: 30px;
 
         &_uppercase {
-            font-family: "Poppins", sans-serif;
+            font-family: $thirdFont;
         }
     }
 
@@ -704,11 +764,13 @@ button {
     }
 
     &__link {
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     &__subscribe {
         flex: 1 1 auto;
-        margin: 10px 0;
 
         margin-left: 75px;
     }
@@ -724,10 +786,17 @@ button {
 
     &__input {
         margin: 5px 0;
+
+        &:focus {
+            border-width: 2px;
+            border-color: $mainColor;
+        }
     }
 
     &__submit {
         margin: 5px 0;
+
+        padding: 15px 40px;
     }
 }
 
