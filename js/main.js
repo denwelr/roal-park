@@ -1,5 +1,7 @@
 
 $(document).ready(function(){
+    $('.intro__select').selectric();
+
     $(".header__burger").click(function(){
         $(this).toggleClass("active");
         $(".header__inner").toggleClass("active");
@@ -10,7 +12,7 @@ $(document).ready(function(){
         return;
     });
 
-    $(".info__play").click(function(){
+    $(".info__video").click(function(){
         if(screen.width <= 769) {
             window.open('https://www.youtube.com/watch?v=Ilc6ddYgVKI');
         } else {

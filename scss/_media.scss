@@ -15,6 +15,7 @@
         }
 
         .intro__column:not(:last-child) {
+            padding: 0;
             margin-bottom: 20px;
         }
 
@@ -24,6 +25,10 @@
 
         .form__container {
             flex-direction: column;
+        }
+
+        .form__submit {
+            margin-left: 0;
         }
         position: static;
         align-items: flex-start;

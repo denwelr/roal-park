@@ -298,7 +298,6 @@ ul {
 .form {
     &__submit {
         flex: 0 1 auto;
-        display: block;
 
         margin: 10px 0 10px 60px;
     }
@@ -329,6 +328,15 @@ ul {
         flex: 0 1 auto;
 
         min-width: 0;
+        cursor: pointer;
+
+        &:hover > .info__play {
+            background-color: $mainColor;
+
+            &:after {
+                color: #fff;
+            }
+        }
 
         img {
             display: block;
@@ -341,6 +349,7 @@ ul {
 
     &__play {
         cursor: pointer;
+        transition: 300ms;
 
         width: 100px;
         height: 100px;
@@ -356,8 +365,10 @@ ul {
 
         &:after {
             content: '►';
+            
             display: block;
             margin: auto;
+            transition: 300ms;
 
             font-size: 3rem;
             color: $mainColor;
