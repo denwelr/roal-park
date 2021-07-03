@@ -21,7 +21,7 @@ body {
 body {
     margin: 0;
 
-    font-family: $primaryFort;
+    font-family: $primaryFont;
     font-size: 18px;
 
     color: #081f32;
@@ -70,7 +70,7 @@ a {
 }
 
 .title {
-    font-family: $primaryFort;
+    font-family: $primaryFont;
     font-weight: 500;
     font-size: 32px;
 
@@ -216,7 +216,7 @@ ul {
     &__select {
         display: block;
         width: 100%;
-        outline: none;;
+        outline: none;
 
         padding: 5px;
 
@@ -454,6 +454,14 @@ ul {
         @media screen and (max-width: 636px) {
             grid-template-columns: 1fr;
         }
+    }
+
+    &__link {
+        font-family: $primaryFont;
+    }
+
+    &__btn {
+        font-family: $secondaryFont;
     }
 
     &__item {

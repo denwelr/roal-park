@@ -577,6 +577,14 @@ ul {
   }
 }
 
+.gallery__link {
+  font-family: "Gelasio", serif;
+}
+
+.gallery__btn {
+  font-family: "Roboto", sans-serif;
+}
+
 .gallery__item_photo {
   position: relative;
   overflow: hidden;
@@ -791,7 +799,7 @@ button {
 
 .footer {
   color: #6b7984;
-  background-color: #FCFCFD;
+  background-color: #fcfcfd;
   padding-top: 50px;
   padding-bottom: 145px;
   font-family: "Poppins", sans-serif;
