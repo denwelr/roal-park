@@ -1,5 +1,6 @@
 @import "variables";
 @import "burger";
+@import "modal";
 
 * {
     box-sizing: border-box;
@@ -93,12 +94,17 @@ ul {
     display: block;
 }
 
+
 .intro {
     background: url("../img/bg.jpg") center / cover no-repeat;
     background-attachment: fixed;
+
     position: relative;
     z-index: 1;
 
+    padding-bottom: 100px;
+
+    // intro:after
     &:after {
         content: '';
         position: absolute;
@@ -114,16 +120,12 @@ ul {
         
     }
 
-    padding-bottom: 100px;
-
-    &__btn {
-        
-    }
-
+    // intro__content
     &__content {
         max-width: 456px;
     }
 
+    // intro__title
     &__title {
         font-size: 57px;
         line-height: 68px;
@@ -137,6 +139,7 @@ ul {
         }
     }
 
+    // intro__subtitle
     &__subtitle {
         font-size: 18px;
         line-height: 28px;
@@ -149,6 +152,7 @@ ul {
         margin-bottom: 30px;
     }
 
+    // intro__form
     &__form {
         font-family: $secondaryFont;
         font-size: 16px;
@@ -164,11 +168,13 @@ ul {
 
         .form__container {
             display: flex;
-            align-items: center;
+            align-items: stretch;
         }
     }
 
+    // intro__column
     &__column {
+        flex: 0 1 auto;
         padding: 0 30px;
         position: relative;
 
@@ -186,7 +192,7 @@ ul {
             background-color: #9dacb8;
         }
     }
-
+    // intro__data
     &__data {
         display: block;
 
@@ -207,21 +213,19 @@ ul {
             border-bottom-width: 2px;
         }
     }
-
     &__select {
-        font-family: inherit;
-        background: none;
-
         display: block;
         width: 100%;
-
-        outline: none;
-        appearance: none;
+        outline: none;;
 
         padding: 5px;
-        border: none;
 
+        border: none;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        line-height: 1.2;
+
+        font-size: 1rem;
+        appearance: none;
 
         cursor: pointer;
     }
@@ -293,6 +297,7 @@ ul {
 
 .form {
     &__submit {
+        flex: 0 1 auto;
         display: block;
 
         margin: 10px 0 10px 60px;
@@ -351,11 +356,13 @@ ul {
 
         &:after {
             content: '►';
-
-            font-size: 40px;
+            display: block;
             margin: auto;
 
+            font-size: 3rem;
             color: $mainColor;
+
+            transform: translate(4px, 4px);
         }
     }
 
@@ -365,14 +372,8 @@ ul {
         margin-left: 20px;
     }
 
-    &__label {
-    }
-
     &__title {
         margin: 15px 0 30px;
-    }
-
-    &__btn {
     }
 }
 
@@ -431,6 +432,11 @@ ul {
         min-width: 0;
 
         border: 2px solid rgba(#c7c7c7, 0.25);
+        transition: 200ms;
+
+        &:hover {
+            box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.1);
+        }
     }
 }
 
@@ -451,9 +457,6 @@ ul {
     }
 
     &__item {
-        &_about {
-        }
-
         &_photo {
             position: relative;
             overflow: hidden;
@@ -485,15 +488,9 @@ ul {
         }
     }
 
-    &__title {
-    }
-
     &__subtitle {
         margin-top: 25px;
         margin-bottom: 30px;
-    }
-
-    &__btn {
     }
 
     &__info {
@@ -512,9 +509,6 @@ ul {
         align-items: baseline;
 
         margin-bottom: 10px;
-    }
-
-    &__name {
     }
 
     &__price {
@@ -585,14 +579,8 @@ ul {
         }
     }
 
-    &__item-header {
-    }
-
     &__user {
         display: inline-block;
-    }
-
-    &__item-footer {
     }
 
     &__author {
@@ -630,14 +618,8 @@ ul {
         text-transform: uppercase;
     }
 
-    &__text {
-    }
-
     &__title {
         margin-bottom: 50px;
-    }
-
-    &__form {
     }
 
     &__form-container {
@@ -651,7 +633,7 @@ ul {
         flex: 1 1 auto;
 
         &:focus {
-            border-width: 2px;
+            border-bottom-width: 2px;
             border-color: $mainColor;
         }
     }
@@ -721,9 +703,6 @@ button {
         }
     }
 
-    &__media {
-    }
-
     &__nav {
         flex: 1 1 auto;
 
@@ -752,10 +731,8 @@ button {
 
         &_uppercase {
             font-family: $thirdFont;
+            text-transform: uppercase;
         }
-    }
-
-    &__list {
     }
 
     &__li {
@@ -775,9 +752,6 @@ button {
         margin-left: 75px;
     }
 
-    &__subscribe-forminner {
-    }
-
     &__subscribe-form {
         display: flex;
         flex-wrap: wrap;
@@ -788,7 +762,8 @@ button {
         margin: 5px 0;
 
         &:focus {
-            border-width: 2px;
+            border-bottom-width: 2px;
+
             border-color: $mainColor;
         }
     }
@@ -797,6 +772,16 @@ button {
         margin: 5px 0;
 
         padding: 15px 40px;
+    }
+
+    &__media {
+        display: flex;
+        align-items: center;
+    }
+    &__media-link {
+        & + & {
+            margin-left: 10px;
+        }
     }
 }
 

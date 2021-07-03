@@ -76,6 +76,49 @@
           transform: rotate(-45deg) translate(-3px, 4px);
 }
 
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.modal:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal__area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.modal__frame {
+  width: 100%;
+}
+
+.modal__body {
+  margin: auto;
+  padding: 0 20px;
+}
+
+.modal__content {
+  max-width: 100%;
+  min-height: 300px;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -217,12 +260,15 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
 .intro__column {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
   padding: 0 30px;
   position: relative;
 }
@@ -256,17 +302,17 @@ ul {
 }
 
 .intro__select {
-  font-family: inherit;
-  background: none;
   display: block;
   width: 100%;
   outline: none;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
   padding: 5px;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  line-height: 1.2;
+  font-size: 1rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   cursor: pointer;
 }
 
@@ -356,6 +402,9 @@ ul {
 }
 
 .form__submit {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
   display: block;
   margin: 10px 0 10px 60px;
 }
@@ -427,9 +476,12 @@ ul {
 
 .info__play:after {
   content: '►';
-  font-size: 40px;
+  display: block;
   margin: auto;
+  font-size: 3rem;
   color: #1b75bb;
+  -webkit-transform: translate(4px, 4px);
+          transform: translate(4px, 4px);
 }
 
 .info__content {
@@ -494,6 +546,13 @@ ul {
           flex: 1 1 260px;
   min-width: 0;
   border: 2px solid rgba(199, 199, 199, 0.25);
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.advantages__column:hover {
+  -webkit-box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.1);
 }
 
 .gallery {
@@ -703,7 +762,7 @@ ul {
 }
 
 .subscribe__input:focus {
-  border-width: 2px;
+  border-bottom-width: 2px;
   border-color: #1b75bb;
 }
 
@@ -804,6 +863,7 @@ button {
 
 .footer__title_uppercase {
   font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
 }
 
 .footer__li {
@@ -838,13 +898,26 @@ button {
 }
 
 .footer__input:focus {
-  border-width: 2px;
+  border-bottom-width: 2px;
   border-color: #1b75bb;
 }
 
 .footer__submit {
   margin: 5px 0;
   padding: 15px 40px;
+}
+
+.footer__media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer__media-link + .footer__media-link {
+  margin-left: 10px;
 }
 
 .slogan {
@@ -861,12 +934,6 @@ button {
   }
 }
 
-@media screen and (any-hover: hover) {
-  .header {
-    background-attachment: initial;
-  }
-}
-
 @media screen and (max-width: 700px) {
   .intro__form {
     position: static;
@@ -880,9 +947,6 @@ button {
   }
   .intro__form .intro__column {
     width: 100%;
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 auto;
-            flex: 0 1 auto;
   }
   .intro__form .intro__column:after {
     display: none;
@@ -899,19 +963,9 @@ button {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .intro__form .form__submit {
-    margin-left: 0;
-  }
 }
 
 /* HEADER */
-/*.header {
-    &__inner {
-        @media screen and (max-width: $mobile) {
-            display: none;
-        }
-    }
-}*/
 /* BURGER MENU */
 @media screen and (max-width: 425px) {
   .header__inner {
@@ -919,10 +973,10 @@ button {
     transition: 400ms;
     position: fixed;
     top: 0;
+    bottom: 0;
     right: -200%;
     z-index: 100;
     width: 100%;
-    height: 100%;
     margin: 0;
     padding: 50px 30px;
     background-color: #000;

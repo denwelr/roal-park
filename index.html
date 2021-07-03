@@ -12,8 +12,8 @@
         rel="stylesheet">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <link rel="stylesheet" href="css/main.css">
 
@@ -23,10 +23,20 @@
 
 <body>
     <div class="wrapper">
+        <!-- video modal window -->
+            <div class="modal" id="video">
+                <a href="#info" class="modal__area"></a>
+                <div class="modal__body">
+                    <div class="modal__content">
+                        <iframe width="727" height="409" src="https://www.youtube.com/embed/Ilc6ddYgVKI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+         <!-- video modal window -->
         <main class="intro">
             <div class="container">
                 <header class="header">
-                    <a href="#" class="logo header__logo">
+                    <a href="" class="logo header__logo">
                         <img src="img/logo.png" alt="Company Logo">
                     </a>
                     <div class="header__inner">
@@ -40,9 +50,9 @@
                         </nav>
                         <a href="" class="primary-btn header__btn">Book now</a>
                     </div>
-                   <div class="header__burger">
-                       <span></span>
-                   </div>
+                    <div class="header__burger">
+                        <span></span>
+                    </div>
                 </header>
 
                 <div class="intro__content">
@@ -66,26 +76,32 @@
                             <h4 class="column__title">
                                 Check In
                             </h4>
-                            <input type="text" class="datepicker-here intro__data" readonly data-minDate="" data-todayButton="true">
+                            <input type="text" class="datepicker-here intro__data" readonly data-minDate=""
+                                data-todayButton="true">
                         </div>
                         <div class="intro__column">
                             <h4 class="column__title">
                                 Check Out
                             </h4>
-                            <input type="text" class="datepicker-here intro__data" readonly data-minDate="" data-todayButton="true">
+                            <input type="text" class="datepicker-here intro__data" readonly data-minDate=""
+                                data-todayButton="true">
                         </div>
                         <div class="intro__column">
                             <h4 class="column__title">
                                 Person
                             </h4>
-                            <select name="" id="" class="intro__select">
-                                <option value="/"></option>
-                                <option value="1">1 adult</option>
-                                <option value="1">2 adults</option>
-                                <option value="1">1 adult 1 kid</option>
-                                <option value="1">2 adults 2 kids</option>
-                                <option value="1">2 adults 3 kids</option>
-                                <option value="1">2 adults 4 kids</option>
+                            <select class="intro__select" name="" id="">
+                                <option>1 adult</option>
+                                <option>1 adult 1 kid</option>
+                                <option>1 adult 2 kids</option>
+                                <option>1 adult 3 kids</option>
+                                <option>1 adult 4 kids</option>
+                                <option>1 adult 5 kids</option>
+                                <option>2 adults 1 kid</option>
+                                <option>2 adults 2 kids</option>
+                                <option>2 adults 3 kids</option>
+                                <option>2 adults 4 kids</option>
+                                <option>2 adults 5 kids</option>
                             </select>
                         </div>
 
@@ -94,7 +110,7 @@
                 </div>
             </div>
         </main>
-        <section class="info">
+        <section class="info" id="info">
             <div class="container">
                 <div class="info__body">
                     <div class="info__video">
@@ -352,7 +368,7 @@
             <div class="container">
                 <div class="footer__body">
                     <div class="footer__info">
-                        <a href="/" class="logo footer__logo">
+                        <a href="" class="logo footer__logo">
                             <img src="img/logo.png" alt="Company Logo">
                         </a>
                         <span class="slogan">
@@ -361,18 +377,18 @@
 
                         <div class="footer__media-inner">
                             <a href="#" class="footer__email">
-                                @shovasatkhira88.com
+                                @roalpark.com
                             </a>
 
                             <div class="footer__media">
-                                <a href="#"><img src="img/icons/1.png" alt=""></a>
-                                <a href="#"><img src="img/icons/2.png" alt=""></a>
-                                <a href="#"><img src="img/icons/3.png" alt=""></a>
-                                <a href="#"><img src="img/icons/4.png" alt=""></a>
+                                <a href="#" class="footer__media-link"><img src="img/icons/1.png" alt=""></a>
+                                <a href="#" class="footer__media-link"><img src="img/icons/2.png" alt=""></a>
+                                <a href="#" class="footer__media-link"><img src="img/icons/3.png" alt=""></a>
+                                <a href="#" class="footer__media-link"><img src="img/icons/4.png" alt=""></a>
                             </div>
                         </div>
                     </div>
-                    <div class="footer__inner"> 
+                    <div class="footer__inner">
                         <div class="footer__nav">
                             <div class="footer__nav-col">
                                 <h4 class="footer__title">Home</h4>
@@ -398,7 +414,8 @@
 
                             <div class="footer__subscribe-forminner">
                                 <form action="#" method="POST" class="footer__subscribe-form">
-                                    <input required type="email" class="input footer__input" placeholder="Enter your email address">
+                                    <input required type="email" class="input footer__input"
+                                        placeholder="Enter your email address">
                                     <button type="submit" class="primary-btn submit footer__submit">Subscribe</button>
                                 </form>
                             </div>
